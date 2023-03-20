@@ -43,15 +43,7 @@ If you would like to contribute to this project, please follow these guidelines:
 
 ## Authors
 
-List the authors of the project.
-
-## License
-
-Specify the license under which the project is released.
-
-## Acknowledgments
-
-List any individuals or organizations that provided inspiration, guidance, or resources for the project.
+Atharva-karambe
 
 ### Installing MongoDB
 
