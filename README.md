@@ -21,10 +21,10 @@ Make sure you have the following software installed:
 2. Install the prerequisites as described above.
 3. Start the MongoDB server by running the following command in a terminal window:
 
-This will start the MongoDB server running in the background.
+This will start the MongoDB server running in the background. $ mongod
 
 4. In a separate terminal window, navigate to the project root directory and start the Flask application by running the following command:
-
+$ python app.py
 
 The application will start running on http://localhost:5000.
 
@@ -60,7 +60,7 @@ To install MongoDB, follow these steps:
 1. Go to the MongoDB Community Server download page and download the appropriate version for your operating system.
 2. Install MongoDB according to the instructions for your operating system.
 3. Start the MongoDB server by running the following command in a terminal window:
-
+$ python app.py
 
 This will start the MongoDB server running in the background.
 
