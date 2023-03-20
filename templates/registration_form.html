@@ -1,0 +1,302 @@
+<doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MROOAK</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    
+    <style>
+    
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      #videoDiv2 {width:100%; max-width:100%; margin:auto; display:block; position: relative;} /* This has been changed */
+#video2{width:100%; height:auto } /* This has been changed */
+#videoMessage2 { position: absolute; top: 0; left: 0;
+display: flex;
+flex-direction: column; 
+justify-content: center;
+align-items: center; 
+width: 100%;
+height: 100%;}
+    </style>
+    
+  </head>
+
+  <body>
+  
+    <div style = "padding-top: 10px; padding-bottom: 6px; background-color:black;" class="shadow-sm">
+	 <ul class="nav justify-content-center">
+	  <li class="nav-item">
+		<a class="nav-link" href="#home"><h5>Home</h5></a>
+	  </li>
+	  <li class="nav-item">
+		<a class="nav-link" href="#about"><h5>About</h5></a>
+	  </li>
+	  <li class="nav-item">
+		<a class="nav-link" href="#sponser"><h5>Sponsers</h5></a>
+	  </li>
+	  <li class="nav-item">
+		<a class="nav-link" href="#prize"><h5>Prizes</h5></a>
+	  </li>
+	  <li class="nav-item">
+		<a class="nav-link" href="#contact_us"><h5>Contact us</h5></a>
+	  </li>
+	</ul>
+	</div>
+ 
+	  
+  
+  
+<main>
+
+
+
+<div id = "home" class="bg-black text-white">
+	<div id="videoDiv2"> 
+	<video id="video2" preload="" autoplay="" muted="" playsinline="" loop="">
+	<source src="{{ url_for('static', filename = 'production ID_4736851.mp4') }}" type="video/mp4">
+	</video> 
+		<div id="videoMessage2" class="styling">
+		<div class="container ">
+			<div class="text-center border-bottom ">
+				<h1 class="display-1 fw-bold">HACKATHON</h1>
+				<h1 class="display-1 fw-bold">{{Name}}</h1>
+				<div class="display-4 fw-bold py-3">
+				  <h2 class="display-6 fw-bold">From {{Data[2]}} To {{Data[4]}}</h2>
+				  <div class=" gap-2 py-3 d-sm-flex justify-content-sm-center mb-5">
+				    <button type="button" class="btn btn-danger btn-lg px-4 me-sm-3">Register</button>
+				  </div>
+				</div>
+			</div>
+   		</div>
+	</div>
+</div>
+
+
+  <div id = "about" class="container col-xxl-8 px-4 py-5 ">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{{ url_for('static', filename = 'pexels-danny-meneses-943096.jpg') }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">About Hackathon</h1>
+        <p class="lead">{{Data[10]}}</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" herf = "#contact_us" class="btn btn-primary btn-lg px-4 me-md-2">Contact us</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+ <div id = "prize" class="bg-black text-white">
+   <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+   	<div class="text-center border-bottom ">
+				<h1 class="display-4 fw-bold">Prize</h1>
+	</div>
+    <div class="row align-items-center g-lg-5 py-5">
+ 		<div class="col">
+ 		<div class="card text-bg-warning mb-3" style="max-width: 18rem;">
+		  <div class="card-header"><h5 class="card-title">1st Prize</h5></div>
+		  <div class="card-body">
+			<h5 class="card-title">{{Data[7]}} RS</h5>
+			
+		  </div>
+		  </div>
+		</div>
+ 		<div class="col">
+ 		<div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+		  <div class="card-header"><h5 class="card-title">2nd Prize</h5></div>
+		  <div class="card-body">
+			<h5 class="card-title">{{Data[8]}} RS</h5>
+			
+		  </div>
+		   </div>
+		</div>
+		<div class="col">	
+		<div class="card text-bg-light mb-3" style="max-width: 18rem;">
+		  <div class="card-header"><h5 class="card-title">3rd Prize</h5></div>
+		  <div class="card-body">
+			<h5 class="card-title">{{Data[8]}} RS</h5>
+			
+		  </div>
+		   </div>
+		</div>
+    </div>
+    </div>
+    <div id = "register" class="container-sm my-5 bg-dark">
+		<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 ">
+      		<div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+      		<div class="row align-items-start">
+			<div class="col">
+        		<h1 class="display-4 fw-bold lh-1">Register</h1>
+         		<div class="p-5">
+                    <div class="indigo-lightest fw-600 fs-m1 opacity-50">Every one chan register from any background</div>
+                    <div class="mb-3">
+					  <label for="exampleFormControlInput1" class="form-label" style = "color:white;">Full Name</label>
+					  <input type="text" class="form-control" id="std1" placeholder="Jone">
+					</div>
+					<div class="mb-3">
+					  <label for="exampleFormControlInput1" class="form-label" style = "color:white;">Email address</label>
+					  <input type="email" class="form-control" id="std2" placeholder="name@example.com">
+					</div>
+					<div class="mb-3">
+					  <label for="exampleFormControlInput1" class="form-label" style = "color:white;">Phone number</label>
+					  <input type="number" class="form-control" id="std3" placeholder="Phone number">
+					</div>
+					
+					<div class="mb-3">
+					  <label for="exampleFormControlTextarea1" class="form-label"  style = "color:white;">About you</label>
+					  <textarea class="form-control" id="std4" rows="3"></textarea>
+					</div>
+                    <h4 class="white fw-600 fs-m2 mt-10"><button type="button" onclick="getInputValue()" class="btn btn-primary">Submite</button></h>
+                </div>
+            </div>  
+            <div class="col-3">
+            	
+        		<div class="mapouter"><div class="gmap_canvas"><iframe width="614" height="635" id="gmap_canvas" src="https://maps.google.com/maps?q=mumbai&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:635px;width:614px;}</style><a href="https://embedgooglemap.2yu.co">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:635px;width:614px;}</style></div></div>
+        		</div>
+            </div>  
+            </div>
+      		</div>
+		</div>
+	</div>
+	 </section>
+
+	
+ <section>
+	<div id = "sponser" class="container col-xl-10 col-xxl-8 px-4 py-5">
+   	<div class="text-center border-bottom ">
+				<h1 class="display-4 fw-bold">Sponsers</h1>
+	</div>
+	<section>
+	<div class="container text-center py-5">
+	<div class="row align-items-start">
+		<div class="col">
+			 <div class="card text-center text-bg-dark mb-3" style="width: 18rem; height: 18rem;">
+					<div class="card-body ">
+						<p class="card-text py-5"><h2>Google</h2></p>
+					</div>
+			</div>
+		</div>
+		<div class="col">
+			 <div class="card text-center text-bg-dark mb-3" style="width: 18rem; height: 18rem;">
+					<div class="card-body ">
+						<p class="card-text py-5"><h2>yahu</h2></p>
+					</div>
+			</div>
+		</div>
+		<div class="col">
+			 <div class="card text-center text-bg-dark mb-3" style="width: 18rem; height: 18rem;">
+					<div class="card-body ">
+						<p class="card-text py-5"><h2>amazon</h2></p>
+					</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+			
+    </div>
+    </section>
+
+
+  </div>
+    <div id = "contact_us"class="bg-dark text-secondary px-4 py-5 text-center">
+    <div class="py-5">
+      <h1 class="display-5 fw-bold text-white">Contact us</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-5 mb-4">
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">{{Data[13]}}</button>
+          <button type="button" class="btn btn-outline-light btn-lg px-4">91+ {{Data[11]}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</main>
+</body>
+<script>
+      function getInputValue() {
+      var std = [];
+
+      for (let i = 1; i <= 4; i++) {
+      	console.log(document.getElementById("std"+i).value)
+		std.push(document.getElementById("std"+i).value)
+		}
+	  
+      fetch('/hackathon/{{ Name }}', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+     body: JSON.stringify({ "name": std[0] , "email": std[1] ,"phone" : std[2] , "About" : std[3] })
+     })
+     .then(response => response.json())
+     .then(response => getValue(response)) 
+     }
+     function getValue(data) {
+ 	 console.log(data)
+     if( data["sever_response"] == "ok" ){
+     
+     	 window.open("/","_self");
+     	}
+     }
+     
+    
+ </script>
+
+  
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</html>

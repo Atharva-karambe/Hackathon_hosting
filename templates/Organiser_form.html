@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Dashboad | MROOAK </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+     <svg fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16">
+  <path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/>
+</svg>
+      <span class="logo_name">ROOAK</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="/Dashboad">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#"  class="active">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Create new</span>
+          </a>
+        </li>
+        {% if length != 0 %}
+		    {% for da in data %}
+		     <li>
+		      <a href="/Dashboad/{{da}}"  >
+		        <i class='bx bx-coin-stack' ></i>
+		        <span class="links_name">{{da}}</span>
+		      </a>
+           </li>
+			{% endfor %}
+		{% endif %}
+        <li class="log_out">
+          <a href="/log_out">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Create new Hackathon</span>
+      </div>
+      
+      <div >
+        <a class="btn btn-outline-warning" href = "/log_out">log out</a>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      
+
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+        <div class="container">
+      <h1> Hackathon Details</h1>
+          <div class="title">Organizer Details</div>
+			<div class="mb-3 py-3">
+        <label class="form-label">Organizer company name</label>
+        <input id = "org1" class="form-control" placeholder="enter your company name">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Hackathon name</label>
+        <input id = "org2" class="form-control" placeholder="enter your hackathon name">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Mode of hackathon</label>
+        <div class="form-check form-switch">
+          <input id = "org3" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault">online</label>
+        </div>
+        <div class="form-check form-switch">
+          <input id = "org4" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault">offline</label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Start date of hackathon</label>
+        
+        <ul>
+        <li>
+          <label for="Start date"><p>Start date  : </p></label>
+          <input id = "org5" type="date" id="start" name="trip-start" value="2023-07-22" min="2023-03-18" >
+       
+        </li>
+        <li>
+           <label for="appt">Start time :</label>
+          <input id = "org6" type="time" id="appt" value="07:22"  name="appt">
+       
+        </li>
+        </ul>
+        <label class="form-label">End date of hackathon</label>
+        
+        <ul>
+        <li>
+          <label for="End date"><p>End date : </p></label>
+          <input id = "org7" type="date" id="start" name="trip-start" value="2023-07-22" min="2023-03-18" >
+       
+        </li>
+        <li>
+          <label for="appt">End time :</label>
+          <input id = "org8" type="time" id="appt" value="07:22" name="appt">
+          
+        </li>
+        </ul>
+      </div>
+
+   
+
+      <div class="mb-3">
+        <label class="form-label">Price money</label>
+        <div class="form-check form-switch">
+          <input id = "org9" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault">yes</label>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Price details</label>
+          <input id = "org10" class="form-control" placeholder="enter 1st prize amount :- 10000">
+          <input id = "org11" class="form-control" placeholder="enter 2nd prize amount">
+          <input id = "org12" class="form-control" placeholder="enter 3rd prize amount">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">About hackathon</label>
+        <textarea id = "org13" class="form-control" rows="3"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Contact details</label>
+        <input type="email" class="form-control" placeholder="enter yoour mail id  eg:name@example.com">
+        <input id = "org14" class="form-control" placeholder="enter yoour mobile number">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Sponsers name</label>
+        <textarea id = "org15" class="form-control" placeholder="eg:  google,amazon" rows="3"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">FAQ</label>
+        <input id = "org16" class="form-control" placeholder="enter FAQ questions">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Problem statement</label>
+        <input id = "org17" class="form-control" placeholder="enter your problem statement">
+      </div>
+
+
+    
+      <h1> STUDENT DETAILS</h1>
+
+      <div class="mb-3">
+        <label class="form-label">Student name</label>
+        <input id = "std1" class="form-control" placeholder="enter your name">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Gmail id</label>
+        <input id = "std2" class="form-control" placeholder="enter your email id">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Mobile number</label>
+        <input id = "std3" class="form-control" placeholder="enter your mobile number">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">About you/label>
+        <textarea id = "std4" class="form-control" rows="3"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Why do you join Hackathon</label>
+        <textarea id = "std5" class="form-control"></textarea>
+      </div>
+
+
+      <div class="mb-3">
+        <label class="form-label">Payment</label>
+        <textarea id = "std6" class="form-control" rows="3"></textarea>
+      </div>
+
+     
+      
+    </div>
+	
+          <div class="button">
+           <button type="button"  onclick="getInputValue()" id = "subit_but" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+ <script>
+      function getInputValue() {
+      var std = [];
+      var org = [];
+      for (let i = 1; i <= 6; i++) {
+      	console.log(document.getElementById("std"+i).value)
+		std.push(document.getElementById("std"+i).value)
+		}
+	  for (let i = 3; i <= 17; i++) {
+	  	console.log(document.getElementById("org"+i).value)
+		org.push(document.getElementById("org"+i).value)
+		}
+      fetch('/Organiser_form', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+     body: JSON.stringify({ "data_std": std , "data_org": org, "company": document.getElementById("org1").value, "hackathon_name": document.getElementById("org2").value})
+     })
+     .then(response => response.json())
+     .then(response => getValue(response)) 
+     }
+     function getValue(data) {
+ 
+     if( data["sever_response"] == "ok" ){
+     
+     	 window.open("/Dashboad","_self");
+     	}
+     }
+     
+    
+ </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
