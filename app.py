@@ -48,12 +48,12 @@ def Dashboad():
 	if check_authantication(request) == "ok":
 		id_no = request.cookies.get('userID')
 		data = worker.Dashboad(id_no)
+		print(data)
 		if data != "error":
 			hackathon_list = worker.check_registration(data)
 			return render_template('Dashboad.html', data = hackathon_list , length= len(hackathon_list) )
-
-		else:
-			return redirect(url_for('log_in'))
+		elif data == "error":
+			return render_template('Dashboad.html', data = [] , length= 0 )                          
 	else:
 		return redirect(url_for('log_in'))
 		
@@ -86,6 +86,8 @@ def Organiser_form():
 			if data != "error":
 				hackathon_list = worker.check_registration(data)
 				return render_template('Organiser_form.html', data = hackathon_list , length= len(hackathon_list) )
+			elif data == "error":
+				return render_template('Organiser_form.html', data = [] , length= 0 )       
 		
 	else:
 		return redirect(url_for('log_in'))
